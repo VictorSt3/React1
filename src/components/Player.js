@@ -5,7 +5,6 @@ import {
   faAngleLeft,
   faAngleRight,
   faPause,
-  faVolumeDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { playAudio } from "../util";
@@ -21,7 +20,6 @@ const Player = ({
   setCurrentSong,
   setSongs,
 }) => {
-  const [activeVolume, setActiveVolume] = useState(false);
   //UseEffect Update List
   const activeLibraryHandler = (nextPrev) => {
     const newSongs = songs.map((song) => {
@@ -41,9 +39,6 @@ const Player = ({
     setSongs(newSongs);
   };
 
-  const trackAnim = {
-    transform: `translateX(${songInfo.animationPercentage}%)`,
-  };
   //Event Handlers
   function getTime(time) {
     return (
@@ -83,11 +78,6 @@ const Player = ({
       activeLibraryHandler(songs[(currentIndex - 1) % songs.length]);
     }
     if (isPlaying) audioRef.current.play();
-  };
-  const changeVolume = (e) => {
-    let value = e.target.value;
-    audioRef.current.volume = value;
-    setSongInfo({ ...songInfo, volume: value });
   };
 
   return (
