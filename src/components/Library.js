@@ -35,6 +35,7 @@ const Library = ({
       <div className="library-songs">
         {songs.map((song) => (
           <LibrarySong
+            song={song}
             songs={songs}
             cover={song.cover}
             name={song.name}
