@@ -37,11 +37,11 @@ function App() {
       volume: e.target.volume,
     });
   };
+
   const songEndHandler = async () => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-    playAudio(isPlaying, audioRef);
-    return;
+    if (isPlaying) audioRef.current.play();
   };
   return (
     <div className={`App ${libraryStatus ? "library-active" : ""}`}>
