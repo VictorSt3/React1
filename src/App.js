@@ -6,8 +6,6 @@ import Song from "./components/Song";
 import Library from "./components/Library";
 //Import data
 import chillhop from "./data";
-//Util
-import { playAudio } from "./util";
 
 function App() {
   //Ref

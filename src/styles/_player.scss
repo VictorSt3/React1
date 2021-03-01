@@ -39,7 +39,6 @@
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  background: lightblue;
 }
 .animate-track {
   background: rgb(204, 204, 204);
@@ -48,7 +47,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateX(0%);
   padding: 1rem;
   pointer-events: none;
 }

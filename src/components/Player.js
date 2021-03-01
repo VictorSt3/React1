@@ -7,7 +7,7 @@ import {
   faPause,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { playAudio } from "../util";
+//waits to set the song and then plays song
 
 const Player = ({
   isPlaying,
@@ -71,7 +71,7 @@ const Player = ({
       if ((currentIndex - 1) % songs.length === -1) {
         await setCurrentSong(songs[songs.length - 1]);
         activeLibraryHandler(songs[songs.length - 1]);
-        playAudio(isPlaying, audioRef);
+        if (isPlaying) audioRef.current.play();
         return;
       }
       await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
